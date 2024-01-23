@@ -5,7 +5,13 @@ const Accueil = () => {
   return (
     <div>
       <h1>Accueil</h1>
-      <Link href="/about">À propos</Link>
+      <nav>
+        <ul>
+          <li><Link href="/evenement">Évenèment</Link></li>
+          <li><Link href="/inscription">Inscription</Link></li>
+          <li><Link href="/about">À propos</Link></li>
+        </ul>
+      </nav>
     </div>
   );
 };
