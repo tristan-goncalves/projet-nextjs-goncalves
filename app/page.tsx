@@ -13,11 +13,11 @@ const Accueil = () => {
 
   const [eventCreated, setEventCreated] = useState(false);
 
-  const handleChange = (e, index) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const { name, value } = e.target;
     const updatedIntervenants = [...formData.intervenants];
     updatedIntervenants[index] = value;
-
+  
     setFormData((prevData) => ({
       ...prevData,
       [name]: name === 'intervenants' ? updatedIntervenants : value,
