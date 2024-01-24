@@ -1,6 +1,6 @@
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
-import { db } from '../create-evenement-table/route';
+import { db } from '../create-evenement-table';
 import { NextApiRequest, NextApiResponse } from 'next';
  
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
