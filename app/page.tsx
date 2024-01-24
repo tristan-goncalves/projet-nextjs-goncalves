@@ -56,6 +56,11 @@ const Accueil = () => {
     }
   };
 
+  function getEvenement(formdata){
+    console.log(formdata)
+    return (formData)
+  }
+
   return (
     <div className="container">
       <nav>
