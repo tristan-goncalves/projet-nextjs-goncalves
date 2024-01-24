@@ -9,7 +9,7 @@ export async function GET(request: Request) {
         intitule text, 
         petite_description text, 
         grande_description text,
-        date text,
+        date date,
         lieu text,
         intervenants text[] );`;
     return NextResponse.json({ result }, { status: 200 });
