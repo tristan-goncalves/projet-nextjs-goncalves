@@ -4,7 +4,7 @@ import pgPromise from 'pg-promise';
 import cors from 'cors';
 
 const pgp = pgPromise();
-const db = pgp(process.env.POSTGRES_PRISMA_URL);
+const db = pgp(process.env.POSTGRES_URL);
 const corsMiddleware = cors();
 
 export default async function handler(req, res) {
