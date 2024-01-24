@@ -80,7 +80,7 @@ const Accueil = () => {
         <textarea
           id="resume"
           name="resume"
-          rows="4"
+          rows={4}
           value={formData.resume}
           onChange={(e) => handleChange(e, 1)}
           required
@@ -90,7 +90,7 @@ const Accueil = () => {
         <textarea
           id="description"
           name="description"
-          rows="8"
+          rows={8}
           value={formData.description}
           onChange={(e) => handleChange(e, 2)}
           required
