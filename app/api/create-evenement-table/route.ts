@@ -1,5 +1,6 @@
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
+import Accueil from './../../page';
  
 export async function GET(request: Request) {
   try {
@@ -9,4 +10,6 @@ export async function GET(request: Request) {
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });
   }
+  let laData = getEvenement()
+  console.log(laData)
 }

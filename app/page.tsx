@@ -50,15 +50,13 @@ const Accueil = () => {
     if (isConfirmed) {
       // Exemple : Envoyer les données au backend
       console.log("Données soumises :", formData);
-      getEvenement(formData);
   
       // Mettre à jour l'état pour indiquer que l'événement a été créé
       setEventCreated(true);
     }
   };
 
-  function getEvenement(formData: any){
-    console.log("La data c'est : ", formData);
+  function getEvenement(){
     return (formData);
   }
 
