@@ -13,7 +13,7 @@ const Accueil = () => {
 
   const [eventCreated, setEventCreated] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, index: number) => {
     const { name, value } = e.target;
     const updatedIntervenants = [...formData.intervenants];
     updatedIntervenants[index] = value;
