@@ -11,7 +11,9 @@ export async function GET(request: Request) {
         grande_description text,
         date date,
         lieu text,
-        intervenants text[] );`;
+        intervenants text[] );
+        
+        SELECT * FROM EVENEMENTS`;
     return NextResponse.json({ result }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });
