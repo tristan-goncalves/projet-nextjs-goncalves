@@ -1,6 +1,6 @@
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
-import { db } from '/create-evenement-table';
+import { db } from '../api/create-evenement-table';
  
 export default async function handler(req, res) {
     if (req.method === 'POST') {
