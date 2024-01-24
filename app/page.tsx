@@ -41,7 +41,7 @@ const Accueil = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     // Afficher un message de confirmation
     const isConfirmed = window.confirm("Êtes-vous sûr de vouloir créer l'événement ?");
