@@ -8,6 +8,7 @@ const Accueil = () => {
     resume: '',
     description: '',
     date: '',
+    lieu: '',
     intervenants: [''], // Initialisation avec un champ vide
   });
 
@@ -56,9 +57,17 @@ const Accueil = () => {
     }
   };
 
-  function getEvenement(){
-    return (formData);
-  }
+  const creationInsert = () => {
+    let insert = `INSERT INTO EVENEMENTS (intitule, petite_description, grande_description, date, lieu, intervenants) 
+    VALUES ('${formData.intitule}',
+    '${formData.resume}',
+    '${formData.description}',
+    '${formData.date}',
+    '${formData.lieu}',
+    '${formData.intervenants}');`
+
+    return insert
+  };
 
   return (
     <div className="container">
@@ -107,6 +116,16 @@ const Accueil = () => {
           name="date"
           value={formData.date}
           onChange={(e) => handleChange(e, 3)}
+          required
+        /><br />
+
+        <label htmlFor="lieu">Lieu :</label><br />
+        <input
+          type="text"
+          id="lieu"
+          name="lieu"
+          value={formData.lieu}
+          onChange={(e) => handleChange(e, 4)}
           required
         /><br />
 
