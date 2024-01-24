@@ -1,6 +1,8 @@
 "use client"; // This is a client component
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { sql } from '@vercel/postgres';
+import { NextResponse } from 'next/server';
 
 const Accueil = () => {
   const [formData, setFormData] = useState({
@@ -42,11 +44,12 @@ const Accueil = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     // Afficher un message de confirmation
     const isConfirmed = window.confirm("Êtes-vous sûr de vouloir créer l'événement ?");
-      
+
     // Si l'utilisateur a confirmé, procédez avec l'action souhaitée
     if (isConfirmed) {
       // Exemple : Envoyer les données au backend
@@ -55,9 +58,29 @@ const Accueil = () => {
       // Mettre à jour l'état pour indiquer que l'événement a été créé
       setEventCreated(true);
     }
+
+    try {
+      const response = await fetch('/api/add-evenement', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log('Données insérées avec succès !');
+      } else {
+        console.error('Erreur lors de l\'envoi des données.');
+      }
+    } catch (error) {
+      console.error('Erreur:', error);
+    }
+
   };
 
-  const creationInsert = () => {
+  async function creationInsert() {
+
     let insert = `INSERT INTO EVENEMENTS (intitule, petite_description, grande_description, date, lieu, intervenants) 
     VALUES ('${formData.intitule}',
     '${formData.resume}',
