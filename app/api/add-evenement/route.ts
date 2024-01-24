@@ -18,6 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         console.log('Données insérées avec succès:', result);
   
         res.status(200).json({ success: true, data: result });
+        return;
       } catch (error) {
         console.error('Erreur lors de l\'insertion des données:', error);
         res.status(500).json({ success: false, error: 'Erreur serveur' });
