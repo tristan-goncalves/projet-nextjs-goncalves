@@ -57,7 +57,8 @@ const Accueil = () => {
   };
 
   function getEvenement(formData: any){
-    return (formData)
+    console.log("La data c'est : ", formData);
+    return (formData);
   }
 
   return (
