@@ -5,7 +5,7 @@ import pgPromise from 'pg-promise';
 const pgp = pgPromise();
 const db = pgp(process.env.DATABASE_URL);
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
       const { intitule, resume, description, date, lieu, intervenants } = req.body;
