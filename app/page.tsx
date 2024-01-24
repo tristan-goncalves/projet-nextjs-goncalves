@@ -79,19 +79,6 @@ const Accueil = () => {
 
   };
 
-  async function creationInsert() {
-
-    let insert = `INSERT INTO EVENEMENTS (intitule, petite_description, grande_description, date, lieu, intervenants) 
-    VALUES ('${formData.intitule}',
-    '${formData.resume}',
-    '${formData.description}',
-    '${formData.date}',
-    '${formData.lieu}',
-    '${formData.intervenants}');`
-
-    return insert
-  };
-
   return (
     <div className="container">
       <nav>
