@@ -60,7 +60,7 @@ const Accueil = () => {
     }
 
     try {
-      const response = await fetch('/api/add-evenement', {
+      const response = await fetch('/api/add-evenement.js', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
