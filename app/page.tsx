@@ -14,7 +14,7 @@ const Accueil = () => {
       </nav>
 
       <h2>Ajout d'un événement</h2>
-      <form action="/submit_event" method="post">
+      <form action="/api/add-evenement" method="post">
         <label htmlFor="intitule">Intitulé de l'événement:</label>
         <input type="text" id="intitule" name="intitule" required /><br />
 
