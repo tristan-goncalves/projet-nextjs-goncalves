@@ -56,7 +56,7 @@ const Accueil = () => {
     }
   };
 
-  function getEvenement(formData){
+  function getEvenement(formData: any){
     return (formData)
   }
 
