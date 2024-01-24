@@ -1,7 +1,10 @@
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
-import { db } from '../create-evenement-table';
 import { NextApiRequest, NextApiResponse } from 'next';
+import pgPromise from 'pg-promise';
+
+const pgp = pgPromise();
+const db = pgp(process.env.DATABASE_URL);
  
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
