@@ -10,6 +10,6 @@ export async function GET(request: Request) {
     return NextResponse.json({ error }, { status: 500 });
   }
  
-  const evenements = await sql`SELECT * FROM evenements;`;
+  const evenements = await sql`SELECT * FROM EVENEMENTS;`;
   return NextResponse.json({ evenements }, { status: 200 });
 }
