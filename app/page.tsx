@@ -72,7 +72,7 @@ const Accueil = () => {
           id="intitule"
           name="intitule"
           value={formData.intitule}
-          onChange={(e) => handleChange(e, index)}
+          onChange={(e) => handleChange(e, 0)}
           required
         /><br />
 
@@ -82,7 +82,7 @@ const Accueil = () => {
           name="resume"
           rows="4"
           value={formData.resume}
-          onChange={(e) => handleChange(e, index)}
+          onChange={(e) => handleChange(e, 1)}
           required
         ></textarea><br />
 
@@ -92,7 +92,7 @@ const Accueil = () => {
           name="description"
           rows="8"
           value={formData.description}
-          onChange={(e) => handleChange(e, index)}
+          onChange={(e) => handleChange(e, 2)}
           required
         ></textarea><br />
 
@@ -102,7 +102,7 @@ const Accueil = () => {
           id="date"
           name="date"
           value={formData.date}
-          onChange={(e) => handleChange(e, index)}
+          onChange={(e) => handleChange(e, 3)}
           required
         /><br />
 
