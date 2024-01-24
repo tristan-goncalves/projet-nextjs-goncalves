@@ -31,10 +31,10 @@ const Accueil = () => {
     }));
   };
 
-  const removeIntervenant = (index) => {
+  const removeIntervenant = (index: number) => {
     const updatedIntervenants = [...formData.intervenants];
     updatedIntervenants.splice(index, 1);
-
+  
     setFormData((prevData) => ({
       ...prevData,
       intervenants: updatedIntervenants,
