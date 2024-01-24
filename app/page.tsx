@@ -41,16 +41,16 @@ const Accueil = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Afficher un message de confirmation
     const isConfirmed = window.confirm("Êtes-vous sûr de vouloir créer l'événement ?");
-    
+      
     // Si l'utilisateur a confirmé, procédez avec l'action souhaitée
     if (isConfirmed) {
       // Exemple : Envoyer les données au backend
       console.log("Données soumises :", formData);
-
+  
       // Mettre à jour l'état pour indiquer que l'événement a été créé
       setEventCreated(true);
     }
