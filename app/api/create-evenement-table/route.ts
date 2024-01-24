@@ -13,7 +13,7 @@ export async function GET(request: Request) {
         lieu text,
         intervenants text[] );
         
-        SELECT * FROM EVENEMENTS`;
+        SELECT * FROM EVENEMENTS;`;
     return NextResponse.json({ result }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });
