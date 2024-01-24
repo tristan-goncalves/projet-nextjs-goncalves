@@ -1,8 +1,9 @@
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
 import { db } from '../create-evenement-table/route';
+import { NextApiRequest, NextApiResponse } from 'next';
  
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
       try {
         const { intitule, resume, description, date, lieu, intervenants } = req.body;
