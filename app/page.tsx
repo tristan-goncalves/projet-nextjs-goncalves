@@ -14,13 +14,24 @@ const Accueil = () => {
       </nav>
 
       <h2>Ajout d'un événement</h2><br />
-      <form action="/send-data-here" method="post">
-  <label for="first">First name:</label>
-  <input type="text" id="first" name="first" />
-  <label for="last">Last name:</label>
-  <input type="text" id="last" name="last" />
-  <button type="submit">Submit</button>
-</form>
+      <form action="/api/add-evenement" method="post">
+        <label htmlFor="intitule">Intitulé de l'événement :</label><br />
+        <input type="text" id="intitule" name="intitule" /><br />
+
+        <label htmlFor="resume">Résumé de l'événement :</label><br />
+        <textarea id="resume" name="resume"></textarea><br />
+
+        <label htmlFor="description">Description détaillée de l'événement :</label><br />
+        <textarea id="description" name="description"></textarea><br />
+
+        <label htmlFor="date">Date de l'événement :</label><br />
+        <input type="date" id="date" name="date" /><br />
+
+        <label htmlFor="intervenants">Intervenants :</label><br />
+        <input type="text" id="intervenants" name="intervenants" /><br />
+
+        <button type="submit">Créer l'événement</button>
+      </form>
     </div>
   );
 };
