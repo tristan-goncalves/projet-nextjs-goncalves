@@ -8,7 +8,8 @@
 // const db = pgp(process.env.POSTGRES_URL);
 
 // Exportez la fonction handler pour l'API
-export default async function handler(req, res) {
+export default function About() {
+// export default async function handler(req, res) {
   // if (req.method === 'POST') {
 
   //   console.log('Données reçues du frontend:', req.body);
@@ -38,3 +39,5 @@ export default async function handler(req, res) {
   //   res.status(405).json({ success: false, error: 'Méthode non autorisée' });
   // }
 }
+
+export default About;
