@@ -8,7 +8,7 @@
 // const db = pgp(process.env.POSTGRES_URL);
 
 // Exportez la fonction handler pour l'API
-export default function About() {
+export default function LeAbout() {
 // export default async function handler(req, res) {
   // if (req.method === 'POST') {
 
@@ -40,4 +40,4 @@ export default function About() {
   // }
 }
 
-export default About;
+export default LeAbout;
