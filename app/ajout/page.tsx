@@ -53,7 +53,6 @@ const Ajout = () => {
     // Si l'utilisateur a confirmé, procédez avec l'action souhaitée
     if (isConfirmed) {
       // Exemple : Envoyer les données au backend
-      console.log("Données soumises :", formData);
   
       // Mettre à jour l'état pour indiquer que l'événement a été créé
       setEventCreated(true);
@@ -67,6 +66,8 @@ const Ajout = () => {
         },
         body: JSON.stringify(formData),
       });
+
+      console.log(JSON.stringify(formData))
 
       if (response.ok) {
         console.log('Données insérées avec succès !');
