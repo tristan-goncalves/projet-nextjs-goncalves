@@ -5,7 +5,7 @@
 import React, { useEffect, useState } from 'react';
 
 const Accueil = () => {
-  const [apiData, setApiData] = useState<string | null>(null);
+  const [apiData, setApiData] = useState<any | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,7 +13,7 @@ const Accueil = () => {
         const response = await fetch('/api/select-evenement');
         const data = await response.json();
         setApiData(data);
-        if (data && typeof data === 'object' && data.result && data.result.rows) {
+        if (data && data.result && data.result.rows) {
           console.log("Voici apiData : ", data.result.rows);
         }
       } catch (error) {
@@ -29,7 +29,7 @@ const Accueil = () => {
 
   // Mettez à jour les données lorsque apiData change
   useEffect(() => {
-    if (typeof apiData === 'object' && apiData && apiData.result && apiData.result.rows) {
+    if (apiData && apiData.result && apiData.result.rows) {
       setMesData(apiData.result.rows);
     }
   }, [apiData]);
