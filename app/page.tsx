@@ -41,16 +41,16 @@ const Accueil = () => {
         <Link href="/">Accueil</Link>
         <Link href="/ajout">Ajouter un événement</Link>
       </nav>
-  
+
       <h1>Événements:</h1>
-      {mesData ? (
+      {apiData ? (
         <div>
-          {mesData.map((evenement) => (
-            <div key={evenement.id} style={styles.eventContainer}>
-              <h2 style={styles.eventTitle}>{evenement.intitule}</h2>
-              <p style={styles.eventDescription}>{evenement.petite_description}</p>
-              <p style={styles.eventDate}>Date: {new Date(evenement.date).toLocaleDateString()}</p>
-              <p style={styles.eventLocation}>Lieu: {evenement.lieu}</p>
+          {apiData.result.rows.map((evenement) => (
+            <div key={evenement.id} className={styles['event-container']}>
+              <h2 className={styles['event-title']}>{evenement.intitule}</h2>
+              <p className={styles['event-description']}>{evenement.petite_description}</p>
+              <p className={styles['event-date']}>Date: {new Date(evenement.date).toLocaleDateString()}</p>
+              <p className={styles['event-location']}>Lieu: {evenement.lieu}</p>
             </div>
           ))}
         </div>
@@ -60,27 +60,7 @@ const Accueil = () => {
     </div>
   );
 
-// Styles en ligne
-const styles = {
-  eventContainer: {
-    border: '1px solid black',
-    margin: '10px',
-    padding: '10px',
-  },
-  eventTitle: {
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
-  },
-  eventDescription: {
-    marginBottom: '10px',
-  },
-  eventDate: {
-    fontStyle: 'italic',
-  },
-  eventLocation: {
-    fontWeight: 'bold',
-  },
-};
+
 
 };
 export default Accueil;
