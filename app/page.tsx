@@ -5,8 +5,7 @@
 import React, { useEffect, useState } from 'react';
 
 const Accueil = () => {
-
-  const [apiData, setApiData] = useState(null);
+  const [apiData, setApiData] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,7 +13,9 @@ const Accueil = () => {
         const response = await fetch('/api/select-evenement');
         const data = await response.json();
         setApiData(data);
-        console.log("Voici apiData : ", apiData.result.rows)
+        if (data && data.result && data.result.rows) {
+          console.log("Voici apiData : ", data.result.rows);
+        }
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -22,7 +23,6 @@ const Accueil = () => {
 
     fetchData();
   }, []);
-
 
   return (
     <div>
