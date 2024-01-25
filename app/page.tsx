@@ -13,8 +13,8 @@ const Accueil = () => {
       try {
         const response = await fetch('/api/select-evenement');
         const data = await response.json();
-        console.log(data)
         setApiData(data);
+        console.log("Voici apiData : ", apiData.result.rows)
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -23,7 +23,6 @@ const Accueil = () => {
     fetchData();
   }, []);
 
-  console.log("Voici apiData : ", data)
 
   return (
     <div>
