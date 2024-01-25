@@ -11,7 +11,7 @@ const Accueil = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api/hello');
+        const response = await fetch('/api/select-evenement');
         const data = await response.json();
         console.log(data)
         setApiData(data);
