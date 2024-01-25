@@ -23,7 +23,7 @@ const Accueil = () => {
     fetchData();
   }, []);
 
-  console.log("Voici apiData : ", apiData.result.rows)
+  console.log("Voici apiData : ", data.result.rows)
 
   return (
     <div>
