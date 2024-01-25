@@ -13,6 +13,7 @@ const Accueil = () => {
       try {
         const response = await fetch('/api/hello');
         const data = await response.json();
+        console.log(data)
         setApiData(data);
       } catch (error) {
         console.error('Error fetching data:', error);
