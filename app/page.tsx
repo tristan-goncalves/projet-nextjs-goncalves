@@ -46,11 +46,11 @@ const Accueil = () => {
       {mesData ? (
         <div>
           {mesData.map((evenement) => (
-            <div key={evenement.id} style={styles.eventContainer}>
-              <h2 style={styles.eventTitle}>{evenement.intitule}</h2>
-              <p style={styles.eventDescription}>{evenement.petite_description}</p>
-              <p style={styles.eventDate}>Date: {new Date(evenement.date).toLocaleDateString()}</p>
-              <p style={styles.eventLocation}>Lieu: {evenement.lieu}</p>
+            <div key={evenement.id} style={{ border: '1px solid black', margin: '10px', padding: '10px' }}>
+              <h2>{evenement.intitule}</h2>
+              <p>{evenement.petite_description}</p>
+              <p>Date: {new Date(evenement.date).toLocaleDateString()}</p>
+              <p>Lieu: {evenement.lieu}</p>
             </div>
           ))}
         </div>
