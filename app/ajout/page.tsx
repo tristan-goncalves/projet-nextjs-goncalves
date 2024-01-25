@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
 
-const Accueil = () => {
+const Ajout = () => {
   const [formData, setFormData] = useState({
     intitule: '',
     resume: '',
@@ -60,7 +60,7 @@ const Accueil = () => {
     }
 
     try {
-      const response = await fetch('/api/add-evenement', {
+      const response = await fetch('../api/add-evenement', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ const Accueil = () => {
         <Link href="/ajout">Ajouter un événement</Link>
       </nav>
 
-      <h2>Ajout d'un événement</h2>
+      <h2>Ajout d'un événementtt</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="intitule">Intitulé de l'événement:</label><br />
         <input
@@ -167,4 +167,4 @@ const Accueil = () => {
   );
 };
 
-export default Accueil;
+export default Ajout;

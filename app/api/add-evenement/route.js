@@ -1,16 +1,13 @@
 import { sql } from '@vercel/postgres';
 import { NextApiRequest, NextApiResponse } from 'next';
 import pgPromise from 'pg-promise';
-import cors from 'cors';
 
 const pgp = pgPromise();
 const db = pgp(process.env.POSTGRES_URL);
-const corsMiddleware = cors();
 
 export default async function handler(req, res) {
 
-  await corsMiddleware(req, res);
-  
+
   if (req.method === 'POST') {
     try {
       const { intitule, resume, description, date, lieu, intervenants } = req.body;
