@@ -45,7 +45,7 @@ const Accueil = () => {
       <h1>Événements:</h1>
       {apiData ? (
         <div>
-          {apiData.result.rows.map((evenement) => (
+          {apiData.result.rows.map((evenement: Evenement) => (
             <div key={evenement.id} className={styles['event-container']}>
               <h2 className={styles['event-title']}>{evenement.intitule}</h2>
               <p className={styles['event-description']}>{evenement.petite_description}</p>
@@ -59,8 +59,6 @@ const Accueil = () => {
       )}
     </div>
   );
-
-
 
 };
 export default Accueil;
