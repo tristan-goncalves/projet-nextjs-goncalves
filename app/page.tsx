@@ -14,7 +14,6 @@ const Accueil = () => {
         const data = await response.json();
         setApiData(data);
         if (data && data.result && data.result.rows) {
-          console.log("Voici apiData : ", data.result.rows);
         }
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -35,6 +34,8 @@ const Accueil = () => {
   }, [apiData]);
 
   console.log("Voici mes data : ", mesData);
+  console.log("Voici mes data : ", mesData[0].intitule);
+
 
   return (
     <div>
