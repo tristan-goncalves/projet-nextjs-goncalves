@@ -35,7 +35,7 @@ const Accueil = () => {
   }, [apiData]);
 
   return (
-    <div>
+    <div className="container">
       {/* Barre de navigation */}
       <nav>
         <Link href="/">Accueil</Link>
