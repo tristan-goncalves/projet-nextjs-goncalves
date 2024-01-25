@@ -29,7 +29,7 @@ const Accueil = () => {
 
   // Mettez à jour les données lorsque apiData change
   useEffect(() => {
-    if (apiData && apiData.result && apiData.result.rows) {
+    if (typeof data === 'object' && apiData && apiData.result && apiData.result.rows) {
       setMesData(apiData.result.rows);
     }
   }, [apiData]);
