@@ -24,7 +24,7 @@ const Accueil = () => {
   }, []);
 
   // Utilisez une variable d'état pour stocker les données récupérées
-  const [mesData, setMesData] = useState<any | null>(null);
+  const [mesData, setMesData] = useState(null);
 
   // Mettez à jour les données lorsque apiData change
   useEffect(() => {
@@ -34,7 +34,7 @@ const Accueil = () => {
   }, [apiData]);
 
   console.log("Voici mes data : ", mesData);
-  console.log("Voici mes data : ", mesData[0].intitule);
+
 
 
   return (
