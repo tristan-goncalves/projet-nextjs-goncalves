@@ -1,7 +1,7 @@
-// Importez les modules nécessaires
-import { sql } from '@vercel/postgres';
-import { NextApiRequest, NextApiResponse } from 'next';
-import pgPromise from 'pg-promise';
+// // Importez les modules nécessaires
+// import { sql } from '@vercel/postgres';
+// import { NextApiRequest, NextApiResponse } from 'next';
+//import pgPromise from 'pg-promise';
 
 // Initialisez la connexion à la base de données
 // const pgp = pgPromise();
