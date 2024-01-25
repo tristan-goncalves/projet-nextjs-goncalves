@@ -5,7 +5,7 @@
 import React, { useEffect, useState } from 'react';
 
 const Accueil = () => {
-  const [apiData, setApiData] = useState<any>();
+  const [apiData, setApiData] = useState<any | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +24,7 @@ const Accueil = () => {
   }, []);
 
   // Utilisez une variable d'état pour stocker les données récupérées
-  const [mesData, setMesData] = useState();
+  const [mesData, setMesData] = useState<any | null>(null);
 
   // Mettez à jour les données lorsque apiData change
   useEffect(() => {
