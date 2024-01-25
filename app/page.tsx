@@ -15,7 +15,7 @@ const Accueil = () => {
         const data = await response.json();
         setApiData(data);
         if (data && data.result && data.result.rows) {
-          maData = data.result.rows
+          maData = apiData.result.rows
           console.log("Voici apiData : ", data.result.rows);
         }
       } catch (error) {
