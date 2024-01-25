@@ -3,6 +3,7 @@
 // import { NextResponse } from 'next/server';
 "use client"; // This is a client component
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const Accueil = () => {
   const [apiData, setApiData] = useState<any | null>(null);
@@ -35,6 +36,12 @@ const Accueil = () => {
 
   return (
     <div>
+      {/* Barre de navigation */}
+      <nav>
+        <Link href="/">Accueil</Link>
+        <Link href="/ajout">Ajouter un événement</Link>
+      </nav>
+  
       <h1>Événements:</h1>
       {mesData ? (
         <div>
@@ -53,5 +60,4 @@ const Accueil = () => {
     </div>
   );
 };
-
 export default Accueil;
