@@ -4,7 +4,7 @@
 // import { sql } from '@vercel/postgres';
 // import { NextResponse } from 'next/server';
 
-// const Ajout = () => {
+const Ajout = () => {
 //   const [formData, setFormData] = useState({
 //     intitule: '',
 //     resume: '',
@@ -166,6 +166,6 @@
 //       {eventCreated && <p>L'événement a bien été créé !</p>}
 //     </div>
 //   );
-// };
+};
 
-// export default Ajout;
+export default Ajout;
