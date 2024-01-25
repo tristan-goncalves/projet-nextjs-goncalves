@@ -33,15 +33,20 @@ const Accueil = () => {
     }
   }, [apiData]);
 
-
-  console.log("Voici mes data : ", mesData && mesData[0] && mesData[0].intitule);
-
-
   return (
     <div>
-      <h1>API Response:</h1>
+      <h1>Événements:</h1>
       {mesData ? (
-        <pre>{JSON.stringify(mesData, null, 2)}</pre>
+        <div>
+          {mesData.map((evenement) => (
+            <div key={evenement.id} style={{ border: '1px solid black', margin: '10px', padding: '10px' }}>
+              <h2>{evenement.intitule}</h2>
+              <p>{evenement.petite_description}</p>
+              <p>Date: {new Date(evenement.date).toLocaleDateString()}</p>
+              <p>Lieu: {evenement.lieu}</p>
+            </div>
+          ))}
+        </div>
       ) : (
         <p>Loading...</p>
       )}
