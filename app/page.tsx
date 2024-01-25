@@ -6,7 +6,6 @@ import React, { useEffect, useState } from 'react';
 
 const Accueil = () => {
   const [apiData, setApiData] = useState<string | null>(null);
-  let maData;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,7 +14,6 @@ const Accueil = () => {
         const data = await response.json();
         setApiData(data);
         if (data && data.result && data.result.rows) {
-          maData = apiData.result.rows
           console.log("Voici apiData : ", data.result.rows);
         }
       } catch (error) {
@@ -26,13 +24,23 @@ const Accueil = () => {
     fetchData();
   }, []);
 
-  console.log("Voici mes data : ", maData);
+  // Utilisez une variable d'état pour stocker les données récupérées
+  const [mesData, setMesData] = useState(null);
+
+  // Mettez à jour les données lorsque apiData change
+  useEffect(() => {
+    if (apiData && apiData.result && apiData.result.rows) {
+      setMesData(apiData.result.rows);
+    }
+  }, [apiData]);
+
+  console.log("Voici mes data : ", mesData);
 
   return (
     <div>
       <h1>API Response:</h1>
-      {apiData ? (
-        <pre>{JSON.stringify(apiData, null, 2)}</pre>
+      {mesData ? (
+        <pre>{JSON.stringify(mesData, null, 2)}</pre>
       ) : (
         <p>Loading...</p>
       )}
