@@ -13,7 +13,7 @@ const Accueil = () => {
         const response = await fetch('/api/select-evenement');
         const data = await response.json();
         setApiData(data);
-        if (data && data.result && data.result.rows) {
+        if (data && typeof data === 'object' && data.result && data.result.rows) {
           console.log("Voici apiData : ", data.result.rows);
         }
       } catch (error) {
