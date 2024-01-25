@@ -8,7 +8,7 @@
 // const db = pgp(process.env.POSTGRES_URL);
 
 // Exportez la fonction handler pour l'API
-export default function LeAbout() {
+export function LeAbout() {
 // export default async function handler(req, res) {
   // if (req.method === 'POST') {
 
@@ -39,5 +39,3 @@ export default function LeAbout() {
   //   res.status(405).json({ success: false, error: 'Méthode non autorisée' });
   // }
 }
-
-export default LeAbout;
