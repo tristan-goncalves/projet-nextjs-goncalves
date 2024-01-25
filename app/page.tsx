@@ -33,8 +33,8 @@ const Accueil = () => {
     }
   }, [apiData]);
 
-  console.log("Voici mes data : ", mesData);
 
+  console.log("Voici mes data : ", mesData[0].intitule);
 
 
   return (
