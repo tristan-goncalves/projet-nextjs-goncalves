@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 
 const Accueil = () => {
   const [apiData, setApiData] = useState<string | null>(null);
+  let maData;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,6 +15,7 @@ const Accueil = () => {
         const data = await response.json();
         setApiData(data);
         if (data && data.result && data.result.rows) {
+          maData = data.result.rows
           console.log("Voici apiData : ", data.result.rows);
         }
       } catch (error) {
@@ -23,6 +25,8 @@ const Accueil = () => {
 
     fetchData();
   }, []);
+
+  console.log("Voici mes data : ", maData);
 
   return (
     <div>
