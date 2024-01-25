@@ -5,7 +5,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-const Accueil = ({ Component, pageProps }) => {
+const Accueil = () => {
   const [apiData, setApiData] = useState<any | null>(null);
 
   useEffect(() => {
@@ -36,12 +36,6 @@ const Accueil = ({ Component, pageProps }) => {
 
   return (
     <div className="container">
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap"
-          rel="stylesheet"/>
-      </Head>
-      <Component {...pageProps} />
       {/* Barre de navigation */}
       <nav>
         <Link href="/">Accueil</Link>
