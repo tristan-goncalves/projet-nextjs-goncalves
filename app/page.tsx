@@ -42,7 +42,7 @@ const Accueil = () => {
         <Link href="/ajout">Ajouter un événement</Link>
       </nav>
   
-      <h1>Événements:</h1>
+      <h1>Événements :</h1>
       {mesData ? (
         <div>
           {mesData.map((evenement) => (

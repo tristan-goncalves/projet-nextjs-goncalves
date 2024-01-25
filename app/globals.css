@@ -32,6 +32,10 @@ body {
     color: #ffcc00; /* Couleur du texte au survol */
   }
 
+  h1 {
+    font-family: 'Comfortaa', sans-serif;
+  }
+
   h2 {
     color: #333;
   }
