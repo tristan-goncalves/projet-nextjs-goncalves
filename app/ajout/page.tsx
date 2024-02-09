@@ -59,7 +59,7 @@ const Ajout = () => {
     }
 
     try {
-      const response = await fetch('../api/add-evenement', {
+      const response = await fetch('../api/insert-table-evenement', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
