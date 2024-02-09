@@ -1,19 +1,13 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import { sql } from '@vercel/postgres';
-
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method === 'POST') {
-    const formData = req.body;
-
-    try {
-      const result = await sql`INSERT INTO evenements (intitule, resume, description, date, lieu, intervenants) VALUES (${formData.intitule}, ${formData.resume}, ${formData.description}, ${formData.date}, ${formData.lieu}, ${formData.intervenants})`;
-
-      res.status(200).json({ message: 'Données insérées avec succès' });
-    } catch (error) {
-      console.error('Erreur lors de l\'insertion des données:', error);
-      res.status(500).json({ message: 'Erreur lors de l\'insertion des données' });
-    }
-  } else {
-    res.status(405).json({ message: 'Méthode non autorisée' });
+import { NextResponse } from 'next/server';
+ 
+export async function GET(request: Request) {
+  try {
+    const result =
+      await sql`INSERT INTO EVENEMENTS (intitule, petite_description, grande_description, date, lieu, intervenants)
+      VALUES ('Festival de musique étudiant', 'Célébration de la diversité musicale', 'Assistez à un festival de musique organisé par des étudiants, mettant en vedette des groupes locaux et des talents émergents dans divers genres musicaux. Plongez-vous dans une atmosphère vibrante de créativité musicale.', '2024-06-10', 'Parc Bordelais', ARRAY['Lucie Martin', 'David Garcia']);`;
+    return NextResponse.json({ result }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json({ error }, { status: 500 });
   }
 }
