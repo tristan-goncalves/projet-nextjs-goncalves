@@ -1,7 +1,7 @@
 // import React, { useState } from 'react';
 // import { sql } from '@vercel/postgres';
 // import { NextResponse } from 'next/server';
-"use client"; // This is a client component
+"use client";
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
@@ -24,10 +24,10 @@ const Accueil = () => {
     fetchData();
   }, []);
 
-  // Utilisez une variable d'état pour stocker les données récupérées
+  // Utilise une variable d'état pour stocker les données récupérées
   const [mesData, setMesData] = useState<any[] | null>(null);
 
-  // Mettez à jour les données lorsque apiData change
+  // Met à jour les données lorsque apiData change
   useEffect(() => {
     if (apiData && apiData.result && apiData.result.rows) {
       setMesData(apiData.result.rows);

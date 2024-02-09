@@ -1,4 +1,4 @@
-"use client"; // This is a client component
+"use client"; 
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { sql } from '@vercel/postgres';
@@ -47,14 +47,13 @@ const Ajout = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Afficher un message de confirmation
+    // Affiche un message de confirmation
     const isConfirmed = window.confirm("Êtes-vous sûr de vouloir créer l'événement ?");
 
-    // Si l'utilisateur a confirmé, procédez avec l'action souhaitée
+    // Si l'utilisateur a confirmé, procéde avec l'action souhaitée
     if (isConfirmed) {
-      // Exemple : Envoyer les données au backend
   
-      // Mettre à jour l'état pour indiquer que l'événement a été créé
+      // Met à jour l'état pour indiquer que l'événement a été créé
       setEventCreated(true);
     }
 
