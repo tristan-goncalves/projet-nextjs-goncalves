@@ -86,9 +86,9 @@ const Ajout = () => {
         <Link href="/ajout">Ajouter un événement</Link>
       </nav>
 
-      <h2>Ajout d'un événement</h2>
+      <h2>Ajout d'un événementtt</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="intitule">Intitulé de l'événement :</label><br />
+        <label htmlFor="intitule">Intitulé de l'événement:</label><br />
         <input
           type="text"
           id="intitule"
@@ -98,7 +98,7 @@ const Ajout = () => {
           required
         /><br />
 
-        <label htmlFor="resume">Résumé de l'événement :</label><br />
+        <label htmlFor="resume">Résumé de l'événement:</label><br />
         <textarea
           id="resume"
           name="resume"
@@ -108,7 +108,7 @@ const Ajout = () => {
           required
         ></textarea><br />
 
-        <label htmlFor="description">Description détaillée de l'événement :</label><br />
+        <label htmlFor="description">Description détaillée de l'événement:</label><br />
         <textarea
           id="description"
           name="description"
@@ -118,7 +118,7 @@ const Ajout = () => {
           required
         ></textarea><br />
 
-        <label htmlFor="date">Date de l'événement :</label><br />
+        <label htmlFor="date">Date de l'événement:</label><br />
         <input
           type="date"
           id="date"
@@ -138,7 +138,7 @@ const Ajout = () => {
           required
         /><br />
 
-        <label htmlFor="intervenants">Intervenants :</label><br />
+        <label htmlFor="intervenants">Intervenants:</label><br />
         {formData.intervenants.map((intervenant, index) => (
           <div key={index}>
             <input
